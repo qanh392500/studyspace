@@ -14,7 +14,7 @@ import GasLaws from './pages/Physics/GasLaws/GasLaws';
 import MolecularDynamics from './pages/Physics/MolecularDynamics/MolecularDynamics';
 import EnglishLayout from './pages/English/EnglishLayout';
 import EnglishDashboard from './pages/English/EnglishDashboard';
-import English from './pages/English';
+import English from './pages/English/Vocabulary';
 import { ThemeProvider } from './contexts/ThemeContext';
 
 const App: React.FC = () => {
@@ -25,7 +25,7 @@ const App: React.FC = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            
+
             {/* Nested Routes for Math */}
             <Route path="/math" element={<MathLayout />}>
               <Route index element={<MathIntro />} />
@@ -41,13 +41,13 @@ const App: React.FC = () => {
               <Route path="gas-laws" element={<GasLaws />} />
               <Route path="molecular-dynamics" element={<MolecularDynamics />} />
             </Route>
-            
+
             {/* Nested Routes for English */}
             <Route path="/english" element={<EnglishLayout />}>
               <Route index element={<EnglishDashboard />} />
               <Route path="vocabulary" element={<English />} />
             </Route>
-            
+
             {/* Fallback route */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
